@@ -1,0 +1,17 @@
+<nav class="row content">
+    <img src="/assets/logo.png" alt="" routerLink="/" class="pointer">
+
+    <ul class="row" [class.hidden]="!showLinks">
+        <li>
+            <a href="#features" (click)="scrollTo('features', $event)">Features</a>
+        </li>
+        <li>
+            <a href="#monitors" (click)="scrollTo('monitors', $event)">Monitors</a>
+        </li>
+        <li>
+            <a href="#faq" (click)="scrollTo('faq', $event)">FAQ</a>
+        </li>
+    </ul>
+
+    <a class="btn-primary" href="https://dash.v500-cook.com">Dashboard</a>
+</nav>

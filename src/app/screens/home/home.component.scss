@@ -1,0 +1,131 @@
+@import '/src/environments/environment.scss';
+
+
+main{
+    display: grid;
+    row-gap: 135px;
+    @media screen and ( max-width: $tab-size ) {
+        row-gap: 180px;
+    }
+    grid-auto-rows: min-content;
+}
+
+.head-wrapper{
+    min-height: 100vh;
+    display: grid;
+    row-gap: 40px;
+    @media screen and ( min-width: $tab-size+1 ) {
+        grid-template-rows: min-content 1fr;
+    }
+    // background-image: url('/assets/img/bckg-main/header.png');
+    // background-position: top;
+}
+
+app-navbar, app-header{
+    display: grid;
+    @media screen and ( max-width: $tab-size ) {
+        display: none;
+    }
+}
+
+app-header-mobile{
+    display: none;
+    @media screen and ( max-width: $tab-size ) {
+        display: grid;
+    }
+}
+
+
+app-main-mobile{
+    margin-bottom: 40px;
+    @media screen and ( min-width: $tab-size+1 ) {
+        display: none;
+    }
+}
+
+
+
+
+// .wrapper-block{
+//     position: relative;
+
+//     @media screen and( max-width: $tab-size ) {
+//         img.full{
+//             display: none;
+//         }
+
+//         img.mob{
+//             display: block;
+//         }
+//     }
+
+//     img.mob{
+//         display: none;
+//     }
+
+//     img{
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         width: 100%;
+//         // height: 100%;
+//         overflow-x: hidden;
+//         z-index: -1;
+//     }
+
+//     @media screen and ( min-width: $tab-size+1 ) {
+//         &:nth-child(2){
+//             display: grid;
+//             align-content: center;
+//             z-index: 2;
+//             height: 550px;
+//             background-color: #fff;
+//         }
+        
+//     }
+
+
+//     @media screen and ( min-width: $tab-size+1 ) {
+//         &:first-child { 
+//             // max-height: 1250px; transform: translate(-50%, -45%); 
+//             // width: 1920px;
+//             // overflow: hidden;
+//             background-image: url('/assets/img/bckg-main/features.png');
+//         }
+    
+//         &:last-child img{ max-height: 1000px; transform: translate(-50%, -50%); }
+    
+        
+//     }
+//     *:not(img){
+//         z-index: 1000;
+//     }
+
+
+//     @media screen and ( max-width: $tab-size ) {
+        
+//         &:nth-child(1){
+//             background-image: url('/assets/img/bckg-main/features-mobile.png');
+//             background-position: top;
+//             background-size: 100% 100%;
+//         }
+
+//     }
+// }
+
+
+
+// app-footer{
+//     background-image: url('/assets/img/bckg-main/footer.png');
+//     background-position: bottom;
+//     z-index: 20;
+//     margin-top: 150px;
+// }
+
+app-footer{
+    display: grid;
+}
+main > *:not( app-main-mobile, :last-child ){
+    margin-bottom: 100px;
+}

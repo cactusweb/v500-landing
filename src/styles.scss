@@ -1,1 +1,286 @@
-/* You can add global styles to this file, and also import other style files */
+@import '/src/environments/environment.scss';
+
+
+@font-face {
+    font-family: "AgeoPersonalUse";
+    src: url("/assets/fonts/AgeoPersonalUse-Medium.otf");
+    font-style: normal;
+    font-weight: 500;
+}
+@font-face {
+    font-family: "AgeoPersonalUse";
+    src: url("/assets/fonts/AgeoPersonalUse-Bold.otf");
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: "AgeoPersonalUse";
+    src: url("/assets/fonts/AgeoPersonalUse-ExtraBold.otf");
+    font-style: normal;
+    font-weight: 800;
+}
+@font-face {
+    font-family: "AgeoPersonalUse";
+    src: url("/assets/fonts/AgeoPersonalUse-SemiBold.otf");
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: "AgeoPersonalUse";
+    src: url("/assets/fonts/AgeoPersonalUse-Light.otf");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: "AgeoPersonalUse";
+    src: url("/assets/fonts/AgeoPersonalUse.otf");
+    font-style: normal;
+    font-weight: 400;
+}
+
+*:not(.number){
+    font-family: 'AgeoPersonalUse', sans-serif;
+}
+
+
+html, body, app-root{
+    display: grid;
+    padding: 0px;
+    margin: 0px;
+    min-height: 100vh;
+    width: 100%;
+}
+
+app-root{
+    @extend .bckg-response;
+    background-image: url('/assets/img/bckg-main/main.png');
+    @media screen and ( max-width: $tab-size ) {
+        background-image: url('/assets/img/bckg-main/main-mobile.png');
+    }
+}
+
+app-home{
+    grid-template-rows: auto 1fr auto;
+    row-gap: 60px;
+    @media screen and ( max-width: $tab-size ) {
+        row-gap: 80px;
+    }
+    // background-size: auto 100%;
+    // background-size: contain;
+
+}
+
+app-root > *, main > *{
+    display: grid;
+}
+
+main{
+    position: relative;
+}
+
+*{
+    scroll-behavior: smooth;
+    font-family: 'Mitr', sans-serif;
+    color: #aaa;
+    font-weight: 700;
+    &::selection{
+        background-color: $primary-color;
+        color: #fff;
+    }
+}
+
+h1,h2,h3,h4{
+    font-weight: 900;
+}
+
+h1{
+    font-size: 46px;
+}
+
+h2{
+    font-size: 42px;
+}
+
+a{text-decoration: none;}
+a:focus{outline: auto;}
+button, select, a, input[type="checkbox"], input[type="radio"]{cursor: pointer; box-sizing: border-box; padding: 0;margin: 0;}
+button, input{background: none; border: none; padding: 0px; box-sizing: border-box;}
+input[type="date"]{cursor: text; width: 90px; text-align: center;}
+input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-calendar-picker-indicator{display: none; -webkit-appearance: none;}
+a, a *, button, button *{transition: .4s;}
+div, form, nav, section, footer, header, main, input, a, button, textarea{box-sizing: border-box;}
+
+h1, h2, h3, h4, p, ul, li{margin: 0px; padding: 0px;}
+span.hr{width: 100%; display: inline-block; box-sizing: border-box; border: 0.5px solid #3d3d3d; height: 1px; margin: 0px; background-color: #3d3d3d;}
+span.hr.grey{background-color: #898989; border-color: #898989;}
+button:disabled{
+    cursor: default;
+}
+
+fieldset{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+router-outlet{
+    position: absolute;
+}
+
+
+
+
+a, button{
+    cursor: pointer;
+    position: relative;
+    &:disabled{
+        cursor: default;
+    }
+    transition: .4s;
+}
+
+
+input, textarea, select{
+    border: 1px solid transparent;
+}
+
+svg path{
+    transition: .4s;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+button{
+    background: none;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+
+
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #aaa;
+    border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb {
+    border: 1px solid #12B3E8;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #12B3E8;
+    transition: .3s;
+}
+*::-webkit-scrollbar-thumb:hover{
+    background-color: #5acff7;
+}
+  
+*::-webkit-scrollbar-track{
+    border-width:0;
+    background: none;
+}
+
+
+
+
+
+
+.bckg-response{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.row{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 10px;
+    align-items: center;
+}
+
+section{
+    display: grid;
+    grid-auto-rows: min-content;
+    row-gap: 80px;
+    // min-height: 500px;
+    @media screen and ( max-width: $tab-size ) {
+        row-gap: 100px;    
+    }
+    h2{
+        color: $primary-color;
+    }
+
+}
+h2{
+    justify-self: center;
+    text-align: center;
+}
+
+
+
+
+.btn-primary{
+    @extend button;
+    background-color: $primary-color;
+    height: 42px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 18px;
+    border-radius: 21px;
+    &:hover{
+        background-color: $primary-hover-color;
+    }
+    transition: .4s;
+    font-weight: 600;
+}
+
+
+.card{
+    display: grid;
+    background-color: #fff;
+    border-radius: 25px;
+    h3{
+        font-size: 18px;
+        color: $primary-color;
+        *{
+            color: $primary-color;
+        }
+    }
+    p{
+        font-size: 15px;
+        font-weight: bold;
+        color: #aaa;
+    }
+}
+
+.name{
+    font-weight: bold;
+}
+
+
+.content{
+    max-width: 1260px;
+    padding: 0px 80px;
+    width: 100%;
+    @media screen and ( max-width: 900px ) {
+        padding: 0px 40px;
+    }
+    @media screen and ( max-width: 480px ) {
+        padding: 0px 20px;
+    }
+    justify-self: center;
+}

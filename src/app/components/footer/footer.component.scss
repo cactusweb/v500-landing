@@ -1,0 +1,45 @@
+@import '/src/environments/environment.scss';
+
+footer{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    @media screen and ( max-width: $tab-size ) {
+        grid-auto-flow: row;
+        // text-align: center;
+        grid-template-columns: 1fr;
+        padding-bottom: 60px;
+        text-align: center;
+    }
+    padding-bottom: 100px;
+    padding-top: 60px;
+    row-gap: 25px;
+}
+
+ul{
+    justify-self: end;
+    list-style: none;
+    text-align: center;
+    column-gap: 55px;
+    row-gap: 25px;
+    @media screen and ( max-width: $tab-size ) {
+        grid-auto-flow: row;
+        justify-self: center;
+        // grid-row: 1/2;
+    }
+}
+
+
+
+li a{
+    transition: .3s;
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+*{
+    font-weight: 400;
+    @media screen and ( max-width: $tab-size ) {
+        font-size: 20px;
+    }   
+}

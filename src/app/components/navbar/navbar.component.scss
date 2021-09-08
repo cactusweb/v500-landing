@@ -1,0 +1,49 @@
+@import '/src/environments/environment.scss';
+
+nav{
+    grid-template-columns: auto 1fr auto;
+    column-gap: 90px;
+    padding-top: 20px;
+    @media screen and ( max-width: $tab-size ) {
+        grid-template-columns: 1fr auto;
+        column-gap: 30px;
+    }
+}
+
+img{
+    justify-self: start;
+    height: 58px;
+}
+
+ul{
+    justify-self: end;
+    list-style: none;
+    column-gap: 60px;
+    @media screen and ( max-width: $tab-size ) {
+        display: none;
+    }
+    &.hidden{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+li a{
+    transition: .3s;
+    color: $primary-color;
+    font-size: 16px;
+    font-weight: 900;
+    &:hover {
+        color: #A0DBFF;
+    }
+}
+
+
+.btn-primary{
+    width: 148px;
+    @media screen and ( max-width: 320px ) {
+        width: 135px;
+    }
+    font-weight: 700;
+}
+
