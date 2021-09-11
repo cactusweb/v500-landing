@@ -16,8 +16,12 @@ p{
 }
 
 
-img{
+svg{
     width: 100%;
     max-width: 450px;
     justify-self: center;
+    transition: 0;
+    *{
+        transition: 0;
+    }
 }

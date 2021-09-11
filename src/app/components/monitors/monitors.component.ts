@@ -10,7 +10,9 @@ export class MonitorsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.setLeftDistance()
+    setTimeout(() => {
+      this.setLeftDistance()
+    }, 100);
     setTimeout(() => {
       this.changePositions();
     }, 400);

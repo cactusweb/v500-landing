@@ -33,6 +33,11 @@
     position: relative;
     transition: .4s;
     height: 320px;
+    overflow: auto;
+    
+    &::-webkit-scrollbar {
+        height: 0px;
+    }
 }
 
 
